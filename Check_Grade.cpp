@@ -6,6 +6,7 @@ using namespace std;
 void showList(string student[], double grade[], int NoS)
 {
 	int a;
+	
 	// Create a list
 	tuple <string, double> class_grade;
 
@@ -18,6 +19,7 @@ void showList(string student[], double grade[], int NoS)
 		if(get<1>(class_grade) == -1)
 				continue;
 		
+		// Display
 		cout << endl << get<0>(class_grade) << "'s grade is "
 		<< get<1>(class_grade) << endl;
 	}
@@ -29,6 +31,18 @@ char check ()
 	cout << "Y/y for yes and N/n for no: ";
 	cin >> a;
 	return a;
+}
+
+double changeGrade (int NoC, string student[], double grade[])
+{
+	cout << endl << "Which student's score do you want to change?" << endl;
+	cout << "Enter student's number: ";
+	cin >> NoC;
+	NoC = NoC - 1; // Array start at [0], so minus 1
+	cout << "Enter new score: ";
+	cin >> grade[NoC];
+	cout << endl << student[NoC] << "'s new socre is " << grade[NoC] << endl;
+	return grade[NoC];
 }
 
 
@@ -112,16 +126,9 @@ int main()
 			// Change score
 			do
 			{
-			
 				int NoC;
-				cout << endl << "Which student's score do you want to change?" << endl;
-				cout << "Enter student's number: ";
-				cin >> NoC;
-				NoC = NoC - 1;
-				cout << "Enter new score: ";
-				cin >> grade[NoC];
-				cout << endl << student[NoC] << "'s new socre is " << grade[NoC] << endl;
-		
+				changeGrade(NoC, student, grade);
+			
 				// Check if want to change another one
 				cout << endl << "Do you want to change another student's grade?" << endl;
 				y = check();
