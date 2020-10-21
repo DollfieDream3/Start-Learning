@@ -1,6 +1,46 @@
 #include <iostream>
 using namespace std;
 
+void calculation(int method, int num1, int num2)
+{
+	double result;
+	switch(method){
+		case 1:
+			result = num1 + num2;
+			cout << endl << "The result is " << result << "." << endl;
+			break;
+		
+		case 2:
+			result = num1 - num2;
+			cout << endl << "The result is " << result << "." << endl;
+			break;
+			
+		case 3:
+			result = num1 * num2;
+			cout << endl << "The result is " << result << "." << endl;
+			break;
+			
+		case 4:
+			result = num1 / num2;
+			cout << endl << "The result is " << result << "." << endl;
+			break;
+	
+	}
+}
+
+int chooseMethod()
+{
+	int method;
+	cout << endl << "Enter a number to choose a operation." << endl
+	<< "1 for addition." << endl
+	<< "2 for subtraction" << endl
+	<< "3 for multiplication." << endl
+	<< "4 for division." << endl;
+	cout << "Choose one method: ";
+	cin >> method;
+	return method;
+}
+
 int main(){
 
 	// ----------------------------------------------------------------------------------
@@ -26,38 +66,10 @@ int main(){
 	
 		// Choose a method
 		int method;
-		cout << endl << "Enter a number to choose a operation." << endl
-		<< "1 for addition." << endl
-		<< "2 for subtraction" << endl
-		<< "3 for multiplication." << endl
-		<< "4 for division." << endl;
-		cout << "Choose one method: ";
-		cin >> method;
+		method = chooseMethod();
 		
 		// Calculation and display
-		double result;
-		switch(method){
-			case 1:
-				result = num1 + num2;
-				cout << endl << "The result is " << result << "." << endl;
-				break;
-			
-			case 2:
-				result = num1 - num2;
-				cout << endl << "The result is " << result << "." << endl;
-				break;
-				
-			case 3:
-				result = num1 * num2;
-				cout << endl << "The result is " << result << "." << endl;
-				break;
-				
-			case 4:
-				result = num1 / num2;
-				cout << endl << "The result is " << result << "." << endl;
-				break;
-		
-		}
+		calculation(method, num1, num2);
 		
 		// Choose if start a new calculation
 		cout << endl << "Continue?" << endl
@@ -69,7 +81,7 @@ int main(){
 	// ----------------------------------------------------------------------------------
 	
 	// Display footer
-	cout << endl << "Thank you for choosing this basic calculator." << endl;
+	cout << endl << "Thank you for using this basic calculator." << endl;
 
 	// ----------------------------------------------------------------------------------
 	
@@ -83,4 +95,5 @@ int main(){
 Methods used:
 1. do...while loop
 2. switch
+3. function
 */
