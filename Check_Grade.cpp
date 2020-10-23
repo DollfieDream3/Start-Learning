@@ -115,7 +115,8 @@ int main()
 	cout << endl << "----------------------------------------------" << endl << endl;
 	
 	// Check if want to change grade
-	cout << "Do you want to change someone's grade?" << endl;
+	cout << "Do you want to change someone's grade?" << endl 
+	<< "Enter 'no' will terminate the program." << endl;
 	y = check();
 	
 	if(y == 'Y' || y == 'y')
